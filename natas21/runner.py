@@ -6,9 +6,9 @@ import datetime
 
 from string import * 
 
-key  = 'eofm3Wsshxc5bwtVnEuGIlr7ivb9KABF'
-user = 'natas20'
-url  = 'http://natas20.natas.labs.overthewire.org'
+key  = 'IFekPyrQXftziDEsUr3x21sYuahypdgJ'
+user = 'natas21'
+url  = 'http://natas21.natas.labs.overthewire.org'
 
 
 #cookies are encode like this:

